@@ -25,3 +25,9 @@ try {
 } catch {
 	Write-Warning "Failed to set Windows Automatic Updates on computer '$Computer'"
 }
+
+try { 
+    Install-WindowsFeature DNS -IncludeManagementTools 
+} catch {
+    Write-Warning "Failed to install WindowsFeature DNS"
+} 
